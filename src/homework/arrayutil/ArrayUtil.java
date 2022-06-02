@@ -1,80 +1,91 @@
 package homework.arrayutil;
 
 public class ArrayUtil {
-    public static void main(String[] args) {
-        int[] array = {2, 5, 8, 10, 32, 22, 11, 66, 12, 30};
-
-        //Տպել Մասիվի բոլոր էլեմենտները
-        
+    public double getAverage(int[] array) {
+        int sum = 0;
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + ",");
+            sum += array[i];
         }
-        System.out.println();
-        //Տպել մասիվի ամենամեծ թիվը
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
-            }
-        }
-        System.out.println(max);
+        return (double) sum / array.length;
 
-        //Տպել մասիվի ամենափոքր թիվը
-        int min = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-            }
-        }
-        System.out.println(min);
+    }
 
-        //Տպել մասիվի բոլոր զույգ էլեմենտները
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                System.out.print(array[i] + ",");
-            }
-        }
-        System.out.println();
-
-        //Տպել մասիվի բոլոր կենտ էլեմենտները
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0) {
-                System.out.print(array[i] + ",");
-            }
-        }
-        System.out.println();
-
-        //Տպել զույգերի քանակը
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                count++;
-            }
-        }
-
-        //Տպել կենտերի քանակը
-        System.out.println(count);
+    public int getCountOddNumbers(int[] array) {
         int count2 = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 != 0) {
                 count2++;
             }
         }
-        System.out.println(count2);
+        return count2;
+    }
 
-        //Գտնել մասիվի բոլոր թվերի միջին թվաբանականը
-        int sum = 0;
+    public int getCountForPairNumber(int[] array) {
+        int count = 0;
         for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+            if (array[i] % 2 == 0) {
+                count++;
+            }
         }
-        int avg = sum / array.length;
-        System.out.println(avg);
+        return count;
 
-        //Տպել մասիվների էլեմենտների գումարը
-        int sum2 = 0;
+    }
+
+    public void printEveanNumbers(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            sum2 += array[i];
+            if (array[i] % 2 == 0) {
+                System.out.print(array[i] + ",");
+            }
         }
-        System.out.println(sum2);
+    }
+
+    public void printOddNumbers(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                System.out.print(array[i] + ",");
+            }
+        }
+
+    }
+
+    public int getMin(int[] array) {
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
+    public void printAll(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ",");
+        }
+    }
+
+
+    public int getMax(int[] array) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
