@@ -1,32 +1,42 @@
-package homework.books;
+package homework.book.model;
 
 import java.util.Objects;
 
-public class Books {
+public class Book {
     private String title;
-    private String authorName;
+    private Author author;
     private String genre;
     private double price;
     private int count;
 
-    public Books(String title, String authorName, String genre, double price, int count) {
+
+    public Book(String title, Author author, String genre, double price, int count) {
         this.title = title;
-        this.authorName = authorName;
+        this.author = author;
         this.genre = genre;
         this.price = price;
         this.count = count;
     }
 
-    public Books() {
+    public Book() {
 
     }
 
-    public String getAuthorName() {
-        return authorName;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public String getGenre() {
@@ -57,20 +67,20 @@ public class Books {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Books books = (Books) o;
-        return Double.compare(books.price, price) == 0 && count == books.count && title.equals(books.title) && authorName.equals(books.authorName) && genre.equals(books.genre);
+        Book book = (Book) o;
+        return Double.compare(book.price, price) == 0 && count == book.count && title.equals(book.title) && author.equals(book.author) && genre.equals(book.genre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, authorName, genre, price, count);
+        return Objects.hash(title, author, genre, price, count);
     }
 
     @Override
     public String toString() {
-        return "Books{" +
+        return "Book{" +
                 "title='" + title + '\'' +
-                ", authorName='" + authorName + '\'' +
+                ", author=" + author +
                 ", genre='" + genre + '\'' +
                 ", price=" + price +
                 ", count=" + count +
