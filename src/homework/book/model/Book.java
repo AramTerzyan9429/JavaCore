@@ -8,14 +8,16 @@ public class Book {
     private String genre;
     private double price;
     private int count;
+    private User registeredUser;
 
 
-    public Book(String title, Author author, String genre, double price, int count) {
+    public Book(String title, Author author, String genre, double price, int count,User registeredUser) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.price = price;
         this.count = count;
+        this.registeredUser=registeredUser;
     }
 
     public Book() {
@@ -63,6 +65,14 @@ public class Book {
         this.count = count;
     }
 
+    public User getRegisteredUser() {
+        return registeredUser;
+    }
+
+    public void setRegisteredUser(User registeredUser) {
+        this.registeredUser = registeredUser;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -82,6 +92,7 @@ public class Book {
                 "title='" + title + '\'' +
                 ", author=" + author +
                 ", genre='" + genre + '\'' +
+                ", registeredUser='" + registeredUser + '\'' +
                 ", price=" + price +
                 ", count=" + count +
                 '}';
